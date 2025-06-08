@@ -64,6 +64,9 @@ prompt and optional parameters. The server returns a task ID:
 Check progress with `GET /progress/{task_id}`. When the status is
 ``done`` the response will include the ``output_path``.
 
+Intermediate files created during processing are automatically deleted
+after assembly to keep disk usage low.
+
 
 ## Gradio Interface
 

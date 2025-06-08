@@ -5,6 +5,7 @@ from pathlib import Path
 from typing import Optional, Callable
 
 import gc
+import os
 
 from . import (
     text_to_image,
@@ -13,6 +14,14 @@ from . import (
     lip_sync,
     assembly,
 )
+
+
+def _safe_unlink(path: str | Path) -> None:
+    """Remove a file if it exists, ignoring errors."""
+    try:
+        Path(path).unlink(missing_ok=True)
+    except OSError:
+        pass
 
 
 def generate_video_from_text(
@@ -94,11 +103,22 @@ def generate_video_from_text(
     assembly.assemble_video(synced_video_path, mixed_audio, output_path)
     if progress_callback:
         progress_callback("assembly")
+
+    _safe_unlink(tmp_video)
+    if synced_video_path != tmp_video.as_posix():
+        _safe_unlink(synced_video_path)
+    if speech_path:
+        _safe_unlink(speech_path)
+    if music_path:
+        _safe_unlink(music_path)
+    if mixed_audio and mixed_audio not in {speech_path, music_path}:
+        _safe_unlink(mixed_audio)
+
     del video_path
-    gc.collect()
     del speech_path
     del music_path
     gc.collect()
+
     if progress_callback:
         progress_callback("done")
     return output_path
