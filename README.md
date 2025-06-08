@@ -6,8 +6,9 @@ architecture capable of converting text prompts into short multimedia
 videos using a sequence of lightweight processing steps.
 
 The current implementation contains a working text-to-image generator
-using Stable Diffusion through the `diffusers` library. Style presets,
-aspect ratio options and a simple upscaling step are implemented.
+using Stable Diffusion through the `diffusers` library. The model loads
+in half precision to reduce memory usage. Style presets, aspect ratio
+options and a simple upscaling step are implemented.
 
 Phase 3 begins with a lightweight image-to-video component based on
 `moviepy` plus a TTS step using `gTTS` (which requires an internet

@@ -14,7 +14,10 @@ from PIL import Image, ImageStat
 def _load_pipeline() -> StableDiffusionPipeline:
     """Load the Stable Diffusion pipeline once and cache it."""
     model_id = "runwayml/stable-diffusion-v1-5"
-    pipe = StableDiffusionPipeline.from_pretrained(model_id)
+    pipe = StableDiffusionPipeline.from_pretrained(
+        model_id,
+        torch_dtype=torch.float16,
+    )
     device = "mps" if torch.backends.mps.is_available() else "cpu"
     pipe = pipe.to(device)
     pipe.safety_checker = None  # speed up
