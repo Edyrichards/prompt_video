@@ -7,9 +7,12 @@ videos using a sequence of lightweight processing steps.
 
 The current implementation contains a working text-to-image generator
 using Stable Diffusion through the `diffusers` library. Style presets,
-aspect ratio options and a simple upscaling step are implemented. The
-remaining stages are placeholders and should be expanded with Apple
-Silicon optimizations as described in the project specification.
+aspect ratio options and a simple upscaling step are implemented.
+
+Phase 3 begins with a lightweight image-to-video component based on
+`moviepy` plus a minimal TTS step using `gTTS`. Other stages remain
+placeholders and should be expanded with Apple Silicon optimizations as
+described in the project specification.
 
 ## Structure
 

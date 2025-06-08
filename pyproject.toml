@@ -9,6 +9,8 @@ dependencies = [
     "torch",
     "diffusers",
     "transformers",
+    "moviepy",
+    "gTTS",
 ]
 
 [build-system]
