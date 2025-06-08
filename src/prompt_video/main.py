@@ -20,7 +20,7 @@ class GenerateRequest(BaseModel):
     style: str = "photographic"
     aspect_ratio: str = "1:1"
     motion: str = "pan"
-    voice: str = "female"
+    voice: str = "female_1"
     music_style: str = "ambient"
     preview: bool = False
 

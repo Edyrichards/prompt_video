@@ -31,7 +31,7 @@ def generate_video_from_text(
     style: str = "photographic",
     aspect_ratio: str = "1:1",
     motion: str = "pan",
-    voice: str = "female",
+    voice: str = "female_1",
     music_style: str = "ambient",
     preview: bool = False,
     progress_callback: Callable[[str], None] | None = None,
