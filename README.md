@@ -64,3 +64,9 @@ prompt and optional parameters. The server returns a task ID:
 Check progress with `GET /progress/{task_id}`. When the status is
 ``done`` the response will include the ``output_path``.
 
+
+The pipeline optionally applies lip sync using the `Wav2Lip` model if it
+is installed. Provide a path to the model weights via the ``checkpoint``
+parameter in ``lip_sync.apply_lip_sync`` or place ``wav2lip_gan.pth`` in
+the current directory. When the package is missing, the step is skipped.
+
