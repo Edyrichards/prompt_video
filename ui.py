@@ -12,7 +12,16 @@ styles = [
     "sketch",
 ]
 aspect_ratios = ["1:1", "16:9", "9:16"]
-motions = ["pan", "tilt", "zoom"]
+motions = [
+    "pan_right",
+    "pan_left",
+    "tilt_down",
+    "tilt_up",
+    "zoom_in",
+    "zoom_out",
+    "rotate",
+    "static",
+]
 voices = ["female_1", "female_2", "female_3", "male_1", "male_2", "male_3"]
 music_styles = ["ambient", "upbeat", "dramatic", "peaceful"]
 
@@ -57,7 +66,7 @@ with gr.Blocks() as demo:
         aspect_dd = gr.Dropdown(
             aspect_ratios, value="1:1", label="Aspect Ratio"
         )
-        motion_dd = gr.Dropdown(motions, value="pan", label="Motion")
+        motion_dd = gr.Dropdown(motions, value="pan_right", label="Motion")
     with gr.Row():
         voice_dd = gr.Dropdown(voices, value="female_1", label="Voice")
         music_dd = gr.Dropdown(

@@ -26,9 +26,11 @@ Available voices:
 - ``male_2`` – South African accent
 - ``male_3`` – Irish accent
 
-The image-to-video step supports ``pan`` (default), ``tilt`` and
-``zoom`` motions. Use ``preview": true`` in your request to quickly
-generate a 1-second draft clip before rendering the full video.
+The image-to-video step supports several motion presets such as
+``pan_left``/``pan_right`` (``pan``), ``tilt_up``/``tilt_down`` (``tilt``),
+``zoom_in``/``zoom_out``, ``rotate`` and ``static``. Use ``preview": true``
+in your request to quickly generate a 1-second draft clip before
+rendering the full video.
 
 ## Structure
 
