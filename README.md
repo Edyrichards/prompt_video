@@ -65,6 +65,19 @@ Check progress with `GET /progress/{task_id}`. When the status is
 ``done`` the response will include the ``output_path``.
 
 
+## Gradio Interface
+
+With the API server running you can launch a simple Gradio interface:
+
+```bash
+python ui.py
+```
+
+Fill in your prompt and options then click **Generate**. The interface
+polls the API for progress and displays the resulting video when
+finished.
+
+
 The pipeline optionally applies lip sync using the `Wav2Lip` model if it
 is installed. Provide a path to the model weights via the ``checkpoint``
 parameter in ``lip_sync.apply_lip_sync`` or place ``wav2lip_gan.pth`` in

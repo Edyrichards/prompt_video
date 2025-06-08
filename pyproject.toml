@@ -12,6 +12,8 @@ dependencies = [
     "moviepy",
     "gTTS",
     "opencv-python",
+    "gradio",
+    "requests",
 ]
 
 [build-system]
