@@ -9,6 +9,12 @@ dependencies = [
     "torch",
     "diffusers",
     "transformers",
+    "moviepy",
+    "gTTS",
+    "opencv-python",
+    "gradio",
+    "requests",
+    "pytest",
 ]
 
 [build-system]

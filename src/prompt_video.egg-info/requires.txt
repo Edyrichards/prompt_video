@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+pillow
+torch
+diffusers
+transformers
+moviepy
+gTTS
+opencv-python
+gradio
+requests
+pytest
