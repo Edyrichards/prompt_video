@@ -70,7 +70,6 @@ Check progress with `GET /progress/{task_id}`. When the status is
 Intermediate files created during processing are automatically deleted
 after assembly to keep disk usage low.
 
-
 ## Gradio Interface
 
 With the API server running you can launch a simple Gradio interface:
@@ -83,9 +82,7 @@ Fill in your prompt and options then click **Generate**. The interface
 polls the API for progress and displays the resulting video when
 finished.
 
-
 The pipeline optionally applies lip sync using the `Wav2Lip` model if it
 is installed. Provide a path to the model weights via the ``checkpoint``
 parameter in ``lip_sync.apply_lip_sync`` or place ``wav2lip_gan.pth`` in
 the current directory. When the package is missing, the step is skipped.
-

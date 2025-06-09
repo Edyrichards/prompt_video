@@ -5,7 +5,6 @@ from pathlib import Path
 from typing import Optional, Callable
 
 import gc
-import os
 
 from . import (
     text_to_image,
@@ -75,10 +74,7 @@ def generate_video_from_text(
 
     mixed_audio: Optional[str]
     if speech_path and music_path:
-        from moviepy.editor import (
-            AudioFileClip,
-            CompositeAudioClip,
-        )
+        from moviepy.editor import AudioFileClip, CompositeAudioClip
 
         mixed_file = base.with_name(f"{base.stem}_{timestamp}_mix.mp3")
         speech_clip = AudioFileClip(speech_path)
